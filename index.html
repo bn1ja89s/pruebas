@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Geoportal | Acroming Ecuador</title>
+    <link rel="icon" href="assets/img/ICONO_ACRO.svg" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="js/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    
+</head>
+
+<body>
+    <section class="banner">
+        <div class="container-banner py-5 text-white">
+            <div class="titulo-destacado">
+                <h1>Geoportal Acroming Ecuador | Demo Baños</h1>
+                
+            </div>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <div id="sidebar">
+            
+            <h2>CAPAS</h2>
+            <label><input type="checkbox" id="ortoChk" checked /> Ortomosaico Baños</label>
+            
+            <br><br>
+            <h4>Coordenadas Geográficas WGS84:</h4>
+            <div id="coordinates">Coordenadas Geográficas</div>
+            <br>
+            <h4>Coordenadas UTM 17S:</h4>
+            <div id="coordinates-utm">Coordenadas UTM</div>
+        </div>
+        <div class="map-wrapper">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="js/maps.js"></script>
+</body>
+
+</html>

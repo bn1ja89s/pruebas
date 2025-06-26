@@ -1,0 +1,148 @@
+/* 1) Ocultamos scroll y aplicamos fuente genérica */
+html, body {
+  height:100%;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* 2) Banner section */
+.banner {
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #276fae 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  /* Puedes agregar aquí background-image: url('img/banner-bg.jpg'); si tienes una imagen */
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.container-banner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.py-5 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.text-white {
+  color: white;
+}
+
+.titulo-destacado h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.titulo-destacado p {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 3) Layout principal */
+.main-container {
+  display:flex;
+  height:calc(100vh - 80px);
+}
+/* Sidebar */
+#sidebar {
+  width:250px;
+  background:#f8f9fa;
+  padding:1rem;
+  box-shadow:2px 0 5px rgba(100,100,100,0.3);
+  overflow-y:auto;
+}
+
+
+/* Área de coordenadas */
+#coordinates, #coordinates-utm {
+  background: #e9ecef;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+  font-family: monospace;
+  font-size: 14px;
+  min-height: 40px;
+  color: #495057;
+  margin: 5px 0;
+}
+
+#coordinates-utm {
+  background: #d1ecf1;
+  border: 1px solid #bee5eb;
+  color: #0c5460;
+}
+
+/* 3) Mapa: wrapper simple */
+.map-wrapper {
+  flex:1;
+}
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .titulo-destacado h1 {
+    font-size: 1.8rem;
+  }
+  
+  .titulo-destacado p {
+    font-size: 1rem;
+  }
+  
+  .banner {
+    min-height: 70px;
+  }
+  
+  .py-5 {
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+  
+  .main-container {
+    flex-direction: column;
+    height: calc(100vh - 70px);
+  }
+  
+  #sidebar {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-destacado h1 {
+    font-size: 1.5rem;
+  }
+  
+  .titulo-destacado p {
+    font-size: 0.9rem;
+  }
+}
